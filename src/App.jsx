@@ -22,14 +22,14 @@ function App() {
   }
 
   useEffect(() => {
-    setInterval(() => {
+    const degrees = setInterval(() => {
       setDegrees(degrees => degrees + 0.5)
       if (degrees > 360)
         setDegrees(0);
     }, 50);
   
     return () => {
-      clearInterval()
+      clearInterval(degrees)
     }
   }, [])
   
