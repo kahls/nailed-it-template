@@ -1,15 +1,17 @@
 import "./App.css";
-import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
+import BouncyLink from "./components/BouncyLink";
+
 function App() {
+  bouncify();
   return (
     <div className="app">
       <nav className="app-nav">
-        <Link to="/">Home</Link>
-        <Link to="objective">Objective</Link>
-        <Link to="teams">Teams</Link>
-        <Link to="thanks">Thank You</Link>
+        <BouncyLink text="Home" to="/"></BouncyLink>
+        <BouncyLink text="Objective" to="objective"></BouncyLink>
+        <BouncyLink text="Teams" to="teams"></BouncyLink>
+        <BouncyLink text="Thank You" to="thanks"></BouncyLink>
       </nav>
       <div className="app-content">
         <Outlet />
