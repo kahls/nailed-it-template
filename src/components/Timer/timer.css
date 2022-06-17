@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
 .timer {
     display: flex;
     flex-direction: column;
@@ -15,11 +17,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #D5CEC2;
+    padding: 50px;
+    border-radius: 20px;
 }
 
 .timer h2 {
-    color: #fff;
+    color: #000;
     font-size: 50px;
+    font-family: "Comic Neue", cursive;
+    margin-bottom: 0;
 }
 
 .timer.hide {

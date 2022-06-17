@@ -1,6 +1,7 @@
 import React, {useState, useContext, useEffect} from "react";
 import "./timer.css";
 import {TimerContext} from "../../context/TimerProvider";
+import TimeOutImage from "../../assets/timeout.png";
 
 const Timer = () => {
     const timer = useContext(TimerContext);
@@ -29,7 +30,7 @@ const Timer = () => {
     return (
         <div className={`timer ${!timer.showTimer ? "hide" : ""}`}>
             <div className="timer-container">
-                <h2>Time Out :(</h2>
+                <img src={TimeOutImage}/>
                 <h2>{activeTimerCount}</h2>
             </div>                
         </div>
