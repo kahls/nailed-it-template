@@ -9,7 +9,7 @@ const Timer = () => {
 
     useEffect(()=>{
        if (timer.showTimer) {
-            const newInterval = timerInterval === 0 ? 5 : timerInterval * 2
+            const newInterval = timerInterval === 0 ? 3 : Math.floor(timerInterval * 1.5, 10)
             setTimerInterval(newInterval)
             setActiveTimerCount(newInterval)
        }
