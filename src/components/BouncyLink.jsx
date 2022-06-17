@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 class BouncyLink extends React.Component {
   state = {
@@ -73,17 +72,15 @@ class BouncyLink extends React.Component {
 
   render() {
     return (
-      <Link
+      <div
         ref={this.linkRef}
         className="bouncy-link"
         style={{
           transform: `translate(${this.state.transX}px, ${this.state.transY}px)`,
-          padding: '30px',
         }}
-        to={this.props.to}
       >
-        {this.props.text}
-      </Link>
+        {this.props.children}
+      </div>
     );
   }
 }

@@ -1,5 +1,6 @@
 import "./App.css";
 import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import BouncyLink from "./components/BouncyLink";
 
@@ -7,10 +8,18 @@ function App() {
   return (
     <div className="app">
       <nav className="app-nav">
-        <BouncyLink text="Home" to="/"></BouncyLink>
-        <BouncyLink text="Objective" to="objective"></BouncyLink>
-        <BouncyLink text="Teams" to="teams"></BouncyLink>
-        <BouncyLink text="Thank You" to="thanks"></BouncyLink>
+        <BouncyLink>
+          <Link to="/">Home</Link>
+        </BouncyLink>
+        <BouncyLink>
+          <Link to="/objective">Objective</Link>
+        </BouncyLink>
+        <BouncyLink>
+          <Link to="/teams">Teams</Link>
+        </BouncyLink>
+        <BouncyLink>
+          <Link to="/thanks">Thank You</Link>
+        </BouncyLink>
       </nav>
       <div className="app-content">
         <Outlet />
