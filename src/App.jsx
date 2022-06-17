@@ -6,7 +6,6 @@ import TimerProvider from "./context/TimerProvider";
 
 
 function App() {
-  bouncify();
   return (
     <TimerProvider>
       <div className="app">
