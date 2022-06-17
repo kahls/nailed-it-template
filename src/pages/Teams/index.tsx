@@ -11,12 +11,12 @@ function TeamsPage() {
   };
 
   const teams: Array<Array<string>> = [
-    ["Scott Branch", "Erin Kovar", "Mihiran Pandey", " Lawrence Chang"],
-    ["Zigmund Sun Oo", "Tony Kim", "Brandon Gonzales", "Chris Watkins"],
+    ["Scott Branch", "Erin Kovar", "Brandon Gonzales", "Lawrence Chang"],
+    ["Mark DeArmond", "Zigmund Sun Oo", "Mihiran Pandey", "Chris Watkins"],
     ["Kyle Ahlstrom", "Maui Arcuri", "Eddy Ymeri", " Nkemdi Anyiam"],
     ["Chase Thompson", "Tahzib Sunesara", "Melissa Leide", "Luke Emano"],
     ["Hannah Walsh", "Kevin Chen", "Raj Patel", "Eric Gruzca", "Emmie Bowles"],
-    ["Mark DeArmond", "Henry Jordan", "Benn Cheney", "Kristen LaBarbera"],
+    ["Henry Jordan", "Tony Kim", "Benn Cheney", "Kristen LaBarbera"]
   ];
 
   return (
@@ -28,11 +28,11 @@ function TeamsPage() {
       <div className="team-cards">
         {teams.map((team: string[], index: number) => {
           return (
-            <div className="team-card">
+            <div key={index} className="team-card">
               <p className="team-name">{`TEAM ${index + 1}`}</p>
               <ul>
-                {team.map((member: string) => {
-                  return <li>{member}</li>;
+                {team.map((member: string, index: number) => {
+                  return <li key={index}>{member}</li>;
                 })}
               </ul>
             </div>
