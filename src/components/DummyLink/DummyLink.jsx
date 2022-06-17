@@ -12,7 +12,8 @@ const DummyLink = ({ textCopy}) => {
   return (
     <div 
       style={{
-        cursor: 'pointer', color: 'blue', textDecoration: 'underline'
+        cursor: 'pointer', color: 'white',
+        fontSize: 18
       }}
       onClick={handleClick}
     >

@@ -4,25 +4,68 @@ import { Link } from "react-router-dom";
 import TimerProvider from "./context/TimerProvider";
 import Timer from "./components/Timer/Timer";
 import BouncyLink from "./components/BouncyLink";
+import { useState, useEffect } from "react";
+import AutoDuplicator from "./components/AutoDuplicator/AutoDuplicator";
+import DummyLink from "./components/DummyLink/DummyLink";
+
+const DUPLICATE_INTERVAL = 500;
 
 function App() {
+  const [degrees, setDegrees] = useState(0);
+
+  useEffect(() => {
+    setInterval(() => {
+      setDegrees(degrees => degrees + 0.5)
+      if (degrees > 360)
+        setDegrees(0);
+    }, 50);
+  
+    return () => {
+      clearInterval()
+    }
+  }, [])
+  
   return (
     <TimerProvider>
-      <div className="app">
+      <div className="app" style={{
+        background: `linear-gradient(${degrees}deg, #91b7ff, #ffffff, #151193, red, green, brown, orange, yellow, rgb(203, 91, 179), rgb(203, 197, 197))`,
+        animation: "Animation 2s ease infinite",
+        backgroundSize: "200% 200%",
+      }}>
         <Timer/>
         <nav className="app-nav">
           <BouncyLink>
             <Link to="/">Home</Link>
           </BouncyLink>
+          <AutoDuplicator interval={DUPLICATE_INTERVAL + 5}>
+            <BouncyLink>
+              <DummyLink textCopy={"Home"}/>
+            </BouncyLink>
+          </AutoDuplicator>
           <BouncyLink>
             <Link to="/objective">Objective</Link>
           </BouncyLink>
+          <AutoDuplicator interval={DUPLICATE_INTERVAL + 12}>
+            <BouncyLink>
+              <DummyLink textCopy={"Objective"}/>
+            </BouncyLink>
+          </AutoDuplicator>
           <BouncyLink>
             <Link to="/teams">Teams</Link>
           </BouncyLink>
+          <AutoDuplicator interval={DUPLICATE_INTERVAL + 3}>
+            <BouncyLink>
+              <DummyLink textCopy={"Objective"}/>
+            </BouncyLink>
+          </AutoDuplicator>
           <BouncyLink>
             <Link to="/thanks">Thank You</Link>
           </BouncyLink>
+          <AutoDuplicator interval={DUPLICATE_INTERVAL + 14}>
+            <BouncyLink>
+              <DummyLink textCopy={"Thank You"}/>
+            </BouncyLink>
+          </AutoDuplicator>
         </nav>
         <div className="app-content">
           <Outlet />
