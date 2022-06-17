@@ -4,7 +4,6 @@ import { Outlet } from "react-router-dom";
 import BouncyLink from "./components/BouncyLink";
 
 function App() {
-  bouncify();
   return (
     <div className="app">
       <nav className="app-nav">
