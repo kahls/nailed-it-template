@@ -37,6 +37,12 @@
   text-decoration: none;
 }
 
+.logo {
+  width: 250px;
+  padding: 25px;
+  position:absolute;
+}
+
 footer {
   width: 100%;
   display: flex;
