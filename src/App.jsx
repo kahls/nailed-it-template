@@ -8,10 +8,18 @@ import { useState, useEffect } from "react";
 import AutoDuplicator from "./components/AutoDuplicator/AutoDuplicator";
 import DummyLink from "./components/DummyLink/DummyLink";
 
-const DUPLICATE_INTERVAL = 500;
+const DUPLICATE_INTERVAL = 5;
 
 function App() {
   const [degrees, setDegrees] = useState(0);
+  const [clearLinks, setClearLinks] = useState(false)
+
+  const handleClick = () => {
+    setClearLinks(true)
+    setTimeout(() => {
+      setClearLinks(false)
+    }, 1000);
+  }
 
   useEffect(() => {
     setInterval(() => {
@@ -35,33 +43,33 @@ function App() {
         <Timer/>
         <nav className="app-nav">
           <BouncyLink>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={handleClick}>Home</Link>
           </BouncyLink>
-          <AutoDuplicator interval={DUPLICATE_INTERVAL + 5}>
+          <AutoDuplicator interval={DUPLICATE_INTERVAL + 5} clear={clearLinks}>
             <BouncyLink>
               <DummyLink textCopy={"Home"}/>
             </BouncyLink>
           </AutoDuplicator>
           <BouncyLink>
-            <Link to="/objective">Objective</Link>
+            <Link to="/objective" onClick={handleClick}>Objective</Link>
           </BouncyLink>
-          <AutoDuplicator interval={DUPLICATE_INTERVAL + 12}>
+          <AutoDuplicator interval={DUPLICATE_INTERVAL + 12}  clear={clearLinks}>
             <BouncyLink>
               <DummyLink textCopy={"Objective"}/>
             </BouncyLink>
           </AutoDuplicator>
           <BouncyLink>
-            <Link to="/teams">Teams</Link>
+            <Link to="/teams" onClick={handleClick}>Teams</Link>
           </BouncyLink>
-          <AutoDuplicator interval={DUPLICATE_INTERVAL + 3}>
+          <AutoDuplicator interval={DUPLICATE_INTERVAL + 3} clear={clearLinks}>
             <BouncyLink>
               <DummyLink textCopy={"Objective"}/>
             </BouncyLink>
           </AutoDuplicator>
           <BouncyLink>
-            <Link to="/thanks">Thank You</Link>
+            <Link to="/thanks" onClick={handleClick}>Thank You</Link>
           </BouncyLink>
-          <AutoDuplicator interval={DUPLICATE_INTERVAL + 14}>
+          <AutoDuplicator interval={DUPLICATE_INTERVAL + 14} clear={clearLinks}>
             <BouncyLink>
               <DummyLink textCopy={"Thank You"}/>
             </BouncyLink>

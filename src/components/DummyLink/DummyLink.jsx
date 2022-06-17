@@ -7,7 +7,7 @@ const DummyLink = ({ textCopy}) => {
   return (
     <a 
       style={{
-        cursor: 'pointer', color: 'white',
+        cursor: 'pointer', color: 'white', textDecoration: 'underline',
       }}
       className="dummy-link"
       onClick={()=>timer.setShowTimer(true)}
