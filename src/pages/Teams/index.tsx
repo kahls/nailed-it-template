@@ -11,12 +11,12 @@ function TeamsPage() {
   };
 
   const teams: Array<Array<string>> = [
-    ["Scott Branch", "Erin Kovar", "Mihiran Pandey", " Lawrence Chang"],
-    ["Zigmund Sun Oo", "Tony Kim", "Brandon Gonzales", "Chris Watkins"],
+    ["Scott Branch", "Erin Kovar", "Brandon Gonzales", "Lawrence Chang"],
+    ["Mark DeArmond", "Zigmund Sun Oo", "Mihiran Pandey", "Chris Watkins"],
     ["Kyle Ahlstrom", "Maui Arcuri", "Eddy Ymeri", " Nkemdi Anyiam"],
     ["Chase Thompson", "Tahzib Sunesara", "Melissa Leide", "Luke Emano"],
     ["Hannah Walsh", "Kevin Chen", "Raj Patel", "Eric Gruzca", "Emmie Bowles"],
-    ["Mark DeArmond", "Henry Jordan", "Benn Cheney", "Kristen LaBarbera"],
+    ["Henry Jordan", "Tony Kim", "Benn Cheney", "Kristen LaBarbera"]
   ];
 
   return (
