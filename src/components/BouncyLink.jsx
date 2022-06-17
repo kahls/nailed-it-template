@@ -73,7 +73,7 @@ class BouncyLink extends React.Component {
   componentDidUpdate() {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
-    this.handleDirection(0, screenWidth - this.state.deltaX, screenHeight, this.state.deltaY, 0);
+    this.handleDirection(0, screenWidth - 80 - this.state.deltaX, screenHeight - 80 - this.state.deltaY, 0);
   }
 
   componentWillUnmount() {

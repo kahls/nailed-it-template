@@ -24,11 +24,6 @@
   font-size: 40px;
   text-decoration: none;
   white-space: nowrap;
-  position: absolute;
-}
-
-.bouncy-link {
-  box-sizing: border-box;
   padding: 80px;
 }
 
