@@ -2,8 +2,6 @@ import "./App.css";
 import { Outlet } from "react-router-dom";
 
 import BouncyLink from "./components/BouncyLink";
-import bouncify from "./bouncify";
-
 
 function App() {
   bouncify();
