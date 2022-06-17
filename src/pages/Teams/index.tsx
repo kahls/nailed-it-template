@@ -28,11 +28,11 @@ function TeamsPage() {
       <div className="team-cards">
         {teams.map((team: string[], index: number) => {
           return (
-            <div className="team-card">
+            <div key={index} className="team-card">
               <p className="team-name">{`TEAM ${index + 1}`}</p>
               <ul>
-                {team.map((member: string) => {
-                  return <li>{member}</li>;
+                {team.map((member: string, index: number) => {
+                  return <li key={index}>{member}</li>;
                 })}
               </ul>
             </div>
