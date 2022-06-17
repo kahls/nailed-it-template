@@ -24,14 +24,10 @@
   font-size: 40px;
   text-decoration: none;
   white-space: nowrap;
-  position: absolute;
   padding: 80px;
   font-family: "Comic Neue", cursive;
 }
 
-.bouncy-link {
-  box-sizing: border-box;
-}
 
 .app-nav .dummy-link {
   font-size: 32px;
