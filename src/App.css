@@ -41,7 +41,7 @@
 .logo {
   width: 250px;
   padding: 25px;
-  position:absolute;
+  position:fixed;
 }
 
 footer {
