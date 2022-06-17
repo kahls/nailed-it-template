@@ -1,11 +1,10 @@
 import React, { FC } from 'react'
 
 interface props {
-    children: React.ReactNode;
     textCopy: string;
 }
 
-const DummyLink: FC<props> = ({children, textCopy}) => {
+const DummyLink: FC<props> = ({ textCopy}) => {
   return (
     <div style={{
     cursor: 'pointer', color: 'blue', textDecoration: 'underline'
