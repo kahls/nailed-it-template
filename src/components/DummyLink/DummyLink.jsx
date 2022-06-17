@@ -4,21 +4,16 @@ import {TimerContext} from "../../context/TimerProvider";
 const DummyLink = ({ textCopy}) => {
   const timer = useContext(TimerContext)
 
-  const handleClick = () => {
-    console.log('click!')
-    timer.setShowTimer(true)
-  }
-
   return (
-    <div 
+    <a 
       style={{
         cursor: 'pointer', color: 'white',
-        fontSize: 18
       }}
-      onClick={handleClick}
+      className="dummy-link"
+      onClick={()=>timer.setShowTimer(true)}
     >
         {textCopy}
-    </div>
+    </a>
   )
 }
 
