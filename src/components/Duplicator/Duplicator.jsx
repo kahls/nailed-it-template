@@ -15,13 +15,13 @@ const Duplicator = ({ children, clear }) => {
     }, [clear])
     
   return (
-    <div>
+    <div style={{position: 'absolute'}}>
         <div onClick={handleClick}>
             {children}
         </div>
         {duplicates.map(item => {
           return (
-            <div onClick={handleClick}>
+            <div onClick={handleClick} style={{position: 'absolute'}}>
               {item}
             </div>
           )
