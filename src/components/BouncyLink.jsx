@@ -2,23 +2,33 @@ import React from "react";
 
 class BouncyLink extends React.Component {
   state = {
-    transX: 0,
-    transY: 0,
-    offsetX: 1,
-    offsetY: 1,
-    directionX: 'right',
-    directionY: 'down',
+    transX: this.props.transX ?? 0,
+    transY: this.props.transY ?? 0,
+    speed: this.props.speed ?? Math.sqrt(2),
+    directionX: this.props.directionX ?? 'right',
+    directionY: this.props.directionY ?? 'down',
   };
 
   linkRef = React.createRef();
 
   componentDidMount() {
+    // set initial deltaX and deltaY (deltaX is at most the total speed; deltaY is the remained)
+    this.state.deltaX=this.getRandomFloat(0, Math.sqrt(this.state.speed), 2)
+    this.state.deltaY=Math.sqrt(Math.pow(Math.sqrt(this.state.speed), 2) - Math.pow(this.state.deltaX, 2))
+
+    // set interval to update displacement every 4 ms
     this.intervalId = setInterval(() => {
       this.setState({
-        transX: this.state.transX + this.state.offsetX,
-        transY: this.state.transY + this.state.offsetY,
+        transX: this.state.transX + this.state.deltaX,
+        transY: this.state.transY + this.state.deltaY,
       });
     }, 4);
+  }
+
+  getRandomFloat(min, max, decimals) {
+    const str = (Math.random() * (max - min) + min).toFixed(decimals);
+  
+    return parseFloat(str);
   }
 
   handleDirection(topBound, rightBound, bottomBound, leftBound) {
@@ -29,7 +39,7 @@ class BouncyLink extends React.Component {
     if (this.state.directionX === 'right') {
       if (right >= rightBound) {
         this.setState({
-          offsetX: this.state.offsetX * -1,
+          deltaX: this.state.deltaX * -1,
           directionX: 'left',
         });
       }
@@ -37,7 +47,7 @@ class BouncyLink extends React.Component {
     if (this.state.directionX === 'left') {
       if (left <= leftBound) {
         this.setState({
-          offsetX: this.state.offsetX * -1,
+          deltaX: this.state.deltaX * -1,
           directionX: 'right',
         });
       }
@@ -45,7 +55,7 @@ class BouncyLink extends React.Component {
     if (this.state.directionY === 'down') {
       if (bottom >= bottomBound) {
         this.setState({
-          offsetY: this.state.offsetY * -1,
+          deltaY: this.state.deltaY * -1,
           directionY: 'up',
         });
       }
@@ -53,7 +63,7 @@ class BouncyLink extends React.Component {
     if (this.state.directionY === 'up') {
       if (top <= topBound) {
         this.setState({
-          offsetY: this.state.offsetY * -1,
+          deltaY: this.state.deltaY * -1,
           directionY: 'down',
         });
       }
@@ -63,7 +73,7 @@ class BouncyLink extends React.Component {
   componentDidUpdate() {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
-    this.handleDirection(0, screenWidth - this.state.offsetX, screenHeight, this.state.offsetY, 0);
+    this.handleDirection(0, screenWidth - this.state.deltaX, screenHeight, this.state.deltaY, 0);
   }
 
   componentWillUnmount() {
