@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Duplicator from '../Duplicator/Duplicator';
 
-function AutoDuplicator({ interval, children }) {
+function AutoDuplicator({ interval, clear, children }) {
 
     const [duplicates, setDuplicates] = useState([])
 
     const duplicate = () => {
         setInterval(() => {
-           setDuplicates((duplicates) => [...duplicates, children]) 
+            setDuplicates((duplicates) => [...duplicates, children]) 
         }, interval * 1000);
     }
 
@@ -17,15 +17,21 @@ function AutoDuplicator({ interval, children }) {
         clearInterval()
       }
     }, [])
+
+    useEffect(() => {
+        if (clear === true)
+            setDuplicates([])
+    }, [clear])
+    
     
 
   return (
     <>
-        <Duplicator>
+        <Duplicator clear={clear}>
             {children}
         </Duplicator>
         {duplicates.map(item => ( 
-            <Duplicator>
+            <Duplicator clear={clear}>
                 {item}
             </Duplicator>
         ))}

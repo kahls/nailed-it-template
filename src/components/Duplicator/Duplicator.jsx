@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 // Duplicates children on click
-const Duplicator = ({ children}) => {
+const Duplicator = ({ children, clear }) => {
 
     const [duplicates, setDuplicates] = useState([])
 
     const handleClick = () => {
         setDuplicates((duplicates) => [...duplicates, children])
     }
+
+    useEffect(() => {
+      if (clear === true)
+          setDuplicates([])
+    }, [clear])
     
   return (
     <div>
