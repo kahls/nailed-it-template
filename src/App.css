@@ -31,6 +31,7 @@
 
 .app-nav .dummy-link {
   font-size: 32px;
+  text-decoration: none;
 }
 
 footer {
