@@ -7,6 +7,7 @@ import BouncyLink from "./components/BouncyLink";
 import { useState, useEffect } from "react";
 import AutoDuplicator from "./components/AutoDuplicator/AutoDuplicator";
 import DummyLink from "./components/DummyLink/DummyLink";
+import SvgComponent from "./components/svg/svgComponent";
 
 const DUPLICATE_INTERVAL = 5;
 
@@ -38,6 +39,7 @@ function App() {
       <div className="app" style={{
         background: `linear-gradient(${degrees}deg, #91b7ff, #ffffff, #151193, red, green, brown, orange, yellow, rgb(203, 91, 179), rgb(203, 197, 197)) 200% 200%`,
       }}>
+        <SvgComponent className="logo"/>
         <Timer/>
         <nav className="app-nav">
           <BouncyLink>
