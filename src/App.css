@@ -25,11 +25,11 @@
   text-decoration: none;
   white-space: nowrap;
   position: absolute;
+  padding: 80px;
 }
 
 .bouncy-link {
   box-sizing: border-box;
-  padding: 80px;
 }
 
 .app-nav .dummy-link {
