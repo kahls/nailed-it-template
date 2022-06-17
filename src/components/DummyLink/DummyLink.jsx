@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
-import {TimerContext} from "../../App";
+import {TimerContext} from "../../context/TimerProvider";
 
 const DummyLink = ({ textCopy}) => {
   const timer = useContext(TimerContext)
 
   const handleClick = () => {
+    console.log('click!')
     timer.setShowTimer(true)
   }
 
