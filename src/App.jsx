@@ -36,9 +36,7 @@ function App() {
   return (
     <TimerProvider>
       <div className="app" style={{
-        background: `linear-gradient(${degrees}deg, #91b7ff, #ffffff, #151193, red, green, brown, orange, yellow, rgb(203, 91, 179), rgb(203, 197, 197))`,
-        animation: "Animation 2s ease infinite",
-        backgroundSize: "200% 200%",
+        background: `linear-gradient(${degrees}deg, #91b7ff, #ffffff, #151193, red, green, brown, orange, yellow, rgb(203, 91, 179), rgb(203, 197, 197)) 200% 200%`,
       }}>
         <Timer/>
         <nav className="app-nav">

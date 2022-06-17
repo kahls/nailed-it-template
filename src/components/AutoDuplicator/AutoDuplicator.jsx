@@ -26,7 +26,7 @@ function AutoDuplicator({ interval, clear, children }) {
             {children}
         </Duplicator>
         {duplicates.map((item, index) => ( 
-            <Duplicator clear={clear} index={index}>
+            <Duplicator clear={clear} key={index}>
                 {item}
             </Duplicator>
         ))}
