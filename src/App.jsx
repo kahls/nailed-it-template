@@ -2,11 +2,11 @@ import React, { useState, useEffect, createContext } from "react";
 import "./App.css";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import Duplicator from "./components/Duplicator/Duplicator";
 import TimerProvider from "./context/TimerProvider";
 
 
 function App() {
+  bouncify();
   return (
     <TimerProvider>
       <div className="app">
